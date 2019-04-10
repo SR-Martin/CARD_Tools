@@ -16,11 +16,11 @@ group name \t number of genes in group \t gene1 \t gene2 \t ...
 * The user may supply a list of gene names or a list of ARO numbers. In either of these cases, only the sequences found in the list are compared, and all others are ignored.
 
 #### AMRReporter.py
-* Takes a TSV BLAST output file (e.g. Resources/CARD_VS_CARD.out) in the format 
+* Takes a TSV BLAST output file of query sequences against the CARD database, in the format 
 
 query name \t ref name \t identity \t alignment length \t query length \t ref length
 
-and writes (to standard output), for each sequence a list of all other sequences that contain an alignment of a minimum length and identity (these values are set by the user).
+and writes (to standard output), for each query sequence a list of all entries in CARD that contain an alignment of a minimum length and identity (these values are set by the user).
 
 #### all_genes_grouping_70pc.txt
 * The result of AMR_gene_grouper.py on all genes from the CARD database (version 1.1.1), with minimum identity set to 70%. 

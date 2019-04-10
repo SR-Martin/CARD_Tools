@@ -56,6 +56,11 @@ except getopt.GetoptError:
 for opt, arg in opts:
 	if opt == "-h":
 		print "AMR_gene_grouper.py  -f <blast filename> -o <output file for groups>"
+		print ""
+		print "	Partitions the set of all sequences in <blast filename> into groups based on sequence similarity. \
+Each sequence must have at least <min identity, default 80%> identity to all other sequences in its group. Note that \
+the groups are not unique, since the similarity relation is not transitive. If the user provides a file containing and list of \
+gene names or ARO numbers, then only these will be partitioned into groups."
 		print "Options:"
 		print "	 -f <filename>     | name of file containing blast results"
 		print "	 -g <filename>     | name of file containing a list of genes to compare"

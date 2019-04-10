@@ -12,13 +12,18 @@ min2Identity = 75
 min2Length = 0.75
 
 try:
-	opts, args = getopt.getopt(sys.argv[1:],"f:i:l:")
+	opts, args = getopt.getopt(sys.argv[1:],"hf:i:l:")
 except getopt.GetoptError:
-	print "Option not recognised."
+	print "Option not recognised, -h for help."
 	print "AMRReporter.py -f <input filename>  -i <min identity (%) for hit> -l <min length (proportion of ref) for hit>" 
+	sys.exit()
 for opt, arg in opts:
 	if opt == "-h":
 		print "AMRReporter.py -f <input filename>  -i <min identity (%) for hit> -l <min length (proportion of ref) for hit>"
+		print ""
+		print "Writes out a list of all ref sequences found in each query sequence, with minimum alignment length and identity as specified.\
+The input file should be a TSV alignment file in the format:\n\t <query name> \t <ref name> \t <identity> \t <alignment length> \t <query length> \t <ref length>\n\
+e.g.. a BLAST file in the above format of query sequences against a gene database. The output would then indicate the genes that are found in each sequence."
 		sys.exit()
 	elif opt in ("-f"):
 		inputFilename = arg
