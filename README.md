@@ -3,11 +3,15 @@
 Repository for tools used in analysis of entries in the CARD database. Below is a brief description of each file in the repository.
 
 #### AMR_gene_grouper.py
-* Takes a TSV BLAST output file (e.g. Resources/CARD_VS_CARD.out) in the format 
-...qname \t rname \t identity \t ... 
+* Takes a TSV BLAST output file (e.g. Resources/CARD_VS_CARD.out) in the format
+
+...qname \t rname \t identity \t ...
+
 and partitions the set of all sequences in the file into groups, based on similarity. In each group, each sequence has identity of at least some value (set by the user) to all other sequences in the group. Note that this grouping is non-unique, and that the similarity relationship is not transitive. 
 * The output file is in the format 
+
 ...group name \t number of genes in group \t gene1 \t gene2 \t ...
+
 * Can also write a TSV file of pairwise identites i.e. a matrix where the ij entry is the identity between gene i and gene j.
 * The user may supply a list of gene names or a list of ARO numbers. In either of these cases, only the sequences found in the list are compared, and all others are ignored.
 
